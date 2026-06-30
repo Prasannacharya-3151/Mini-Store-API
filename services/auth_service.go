@@ -40,7 +40,7 @@ func SignupService(input models.SignupInput) (string, models.User, error) {
 	return token, createdUser, nil
 }
 
-func LoginService(input models.LoginInout) (string, models.User, error) {
+func LoginService(input models.LoginInput) (string, models.User, error) {
 	user, err := repository.FindUserByEmail(input.Email)
 	if err != nil {
 		return "", models.User{}, errors.New("invalid email or password")
